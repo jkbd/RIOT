@@ -41,8 +41,9 @@ jobs:
       - name: Test
         run: |
           pwd
-          file /home/runner/work/RIOT/RIOT/dist/tools/suit/suit-manifest-generator/dist
-          /home/runner/work/RIOT/RIOT/dist/tools/suit/suit-manifest-generator/dist/suit-tool --version
+          cd dist/tools/suit/suit-manifest-generator/dist/
+          file suit-tool
+          ./suit-tool --version
 
       - name: Upload binary artifact
         uses: actions/upload-artifact@v4
