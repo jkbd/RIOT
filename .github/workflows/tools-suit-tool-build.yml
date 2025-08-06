@@ -1,20 +1,11 @@
-name: suit-tool build
+name: Manual Trigger Test
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'dist/tools/suit/suit-manifest-generator/suit_tool/__init__.py'
 
 jobs:
-  build:
+  test-manual:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Run a script
-        run: |
-          echo "Hello from the pipeline!"
-          cat dist/tools/suit/suit-manifest-generator/suit_tool/__init__.py
+      - name: Say hello
+        run: echo "Hello from a manually triggered workflow!"
