@@ -38,8 +38,13 @@ jobs:
           cd dist/tools/suit/suit-manifest-generator
           pyinstaller --onefile --name suit-tool suit_tool/clidriver.py
 
+      - name: Test
+        run: |
+          file ./dist/suit-tool
+          ./dist/suit-tool --version
+
       - name: Upload binary artifact
         uses: actions/upload-artifact@v4
         with:
-          name: my-binary
-          path: ./build/my-binary
+          name: suit-tool
+          path: ./dist/suit-tool
